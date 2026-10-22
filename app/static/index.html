@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI DevOps Detective</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">◈</span><div><strong>DEVOPS</strong><small>AI DETECTIVE</small></div></div>
+    <div class="nav-label">WORKSPACE</div>
+    <a class="nav active" href="#overview">▦ &nbsp; Overview</a>
+    <a class="nav" href="#troubleshoot">⌘ &nbsp; AI Troubleshooter</a>
+    <a class="nav" href="#costs">↗ &nbsp; Cost Detective</a>
+    <div class="side-bottom"><span class="dot"></span> Demo data mode</div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><div class="eyebrow">DEVOPS INTELLIGENCE / WORKSPACE</div><h1>AI DevOps Detective</h1><p>Diagnose incidents. Find waste. Ship with confidence.</p></div><div class="status"><span class="dot"></span> API connected</div></header>
+    <section id="overview">
+      <div class="section-head"><div><h2>Cluster overview</h2><p>Illustrative sample metrics · no live cluster connected</p></div><button id="refresh" class="secondary">↻ Refresh</button></div>
+      <div class="metrics">
+        <article class="metric"><span>CLUSTER STATUS</span><strong class="orange">DEMO</strong><small>Connect a cluster later</small></article>
+        <article class="metric"><span>NODES (SAMPLE)</span><strong id="nodes">—</strong><small>Simulated infrastructure</small></article>
+        <article class="metric"><span>PODS (SAMPLE)</span><strong id="pods">—</strong><small>Sample inventory</small></article>
+        <article class="metric"><span>MONTHLY COST</span><strong id="totalCost">—</strong><small>Illustrative estimate</small></article>
+      </div>
+    </section>
+    <section id="troubleshoot" class="panel">
+      <div class="section-head"><div><div class="eyebrow">MODULE 01</div><h2>AI Kubernetes Troubleshooter</h2><p>Paste a pod event or log excerpt to diagnose likely causes.</p></div><span class="pill purple">RULES + OPTIONAL AI</span></div>
+      <div class="example-row"><button class="chip" data-example="Warning BackOff: Back-off restarting failed container app in pod checkout-7d9f&#10;Last State: Terminated&#10;Reason: OOMKilled">Example: Crash / OOM</button><button class="chip" data-example="Warning Failed: Failed to pull image example.invalid/store:v9&#10;Reason: ErrImagePull&#10;Back-off pulling image">Example: Image pull</button><button class="chip" data-example="Warning FailedScheduling: 0/3 nodes are available: 3 Insufficient cpu.">Example: Pending pod</button></div>
+      <label for="logs">Kubernetes logs / events</label><textarea id="logs" rows="6" placeholder="Paste redacted kubectl describe pod output, logs, or Kubernetes events…"></textarea>
+      <div class="actions"><span class="hint">Redact tokens, passwords, and customer data first.</span><button id="diagnose" class="primary">✦ Analyze incident</button></div>
+      <div id="diagnosis" class="result hidden"></div>
+    </section>
+    <section id="costs" class="panel">
+      <div class="section-head"><div><div class="eyebrow">MODULE 02</div><h2>AI Cost Detective</h2><p>Find workloads that may be over-requesting CPU or memory.</p></div><span class="pill green">COST OPTIMIZATION</span></div>
+      <div class="cost-summary"><div><span>Sample monthly cost</span><strong id="costTotal">$—</strong></div><div><span>Potential savings estimate</span><strong id="savings" class="green">$—</strong></div></div>
+      <div class="table-wrap"><table><thead><tr><th>WORKLOAD</th><th>CPU UTIL.</th><th>MEMORY UTIL.</th><th>MONTHLY COST</th><th>FINDINGS</th></tr></thead><tbody id="costRows"></tbody></table></div>
+      <p id="costNote" class="hint"></p>
+    </section>
+    <footer>AI DevOps Detective · Portfolio starter · Verify every recommendation before applying it.</footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
